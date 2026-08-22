@@ -1,0 +1,120 @@
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: #ffffff;
+  font-family: 'inter';
+  padding: 32px 16px;
+}
+
+.Project-name {
+  text-align:center;
+  font-size: 30px;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.calc{
+  width: 340px;
+  max-width: 100%;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 22px;
+  border: 1px solid #000000;
+}
+
+/* ---------- Display Screen ---------- */
+.display{
+  background: linear-gradient(175deg, #c8d3ae 0%, #b7c39a 100%);
+  border-radius: 10px;
+  padding: 18px 18px 14px;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+  min-height: 100px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+
+.expression{
+  font-size: 20px;
+  color:#4a5638;
+  text-align:right;
+  word-break: break-all;
+}
+
+.result{
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: clamp(32px, 8vw, 42px);
+  color: #202a17;
+  text-align:right;
+  line-height:1.15;
+  word-break: break-all;
+}
+
+.result.pulse{ transform: scale(0.97); }
+.result.error{ color: #8a2f24; font-size: 25px; }
+
+/* ---------- Keypad ---------- */
+.keys{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.key{
+  appearance:none;
+  border: none;
+  border-radius: 12px; 
+  background: #2c2f34;
+  color: #e7e5df;
+  padding: 16px 0;
+  cursor: pointer;
+  position: relative;
+}
+.key:hover{ background: #35383e; }
+
+.key.op{
+  background: transparent;
+  color: #0000ff;
+  font-size: 20px;
+  border: 1px solid rgba(232,163,61,0.35);
+  border-radius: 12px;
+}
+
+.key.op:hover{ background: rgba(232,163,61,0.1); color: #f4b556; }
+
+.key.equals{
+  background: linear-gradient(160deg, #e8a33d 0%, #c9852a 100%);
+  color: #241505;
+  font-weight: 700;
+
+}
+button.key.equals:hover{ filter: brightness(1.08); }
+
+button.key.zero{ grid-column: span 2; }
+
+button.key.clear-all{ grid-column: span 2; }
+
+button.key.clear-all,
+button.key.clear-entry{
+  color: #ff0000;
+  font-size: 15px;
+
+}
+button.key.clear-all:hover,
+button.key.clear-entry:hover{ background: rgba(193,68,60,0.12); color: #d4564d; }
+
+
+@media (max-width: 380px){
+  .device{ padding: 16px; }
+  button.key{ font-size: 16px; padding: 14px 0; }
+  .result{ font-size: clamp(24px, 9vw, 35px); }
+}
