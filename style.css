@@ -28,7 +28,6 @@ body{
   border: 1px solid #000000;
 }
 
-/* ---------- Display Screen ---------- */
 .display{
   background: linear-gradient(175deg, #c8d3ae 0%, #b7c39a 100%);
   border-radius: 10px;
@@ -48,10 +47,11 @@ body{
   color:#4a5638;
   text-align:right;
   word-break: break-all;
+  min-height: 20px;
 }
 
 .result{
-  font-family: var(--mono);
+  font-family: 'JetBrains Mono';
   font-weight: 700;
   font-size: clamp(32px, 8vw, 42px);
   color: #202a17;
@@ -63,7 +63,7 @@ body{
 .result.pulse{ transform: scale(0.97); }
 .result.error{ color: #8a2f24; font-size: 25px; }
 
-/* ---------- Keypad ---------- */
+
 .keys{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
